@@ -1,0 +1,73 @@
+* {
+	box-sizing: border-box;
+}
+header {
+    text-align: center;
+    padding: 3.8em 0;}
+
+
+body {
+    font-family: Verdana, Tahoma, sans-serif;
+    line-height: 1.6;
+    background:url(../Imagen/Diapositiva1.JPG);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-size: 16px;
+    color: #3a3a3a
+	}
+
+h1 {
+    color:rgb(118, 216, 233);
+    font-size: 18px;
+    text-align:center}
+h2,h3 {
+        color:#093a58;
+        font-size: 18px}
+p {
+	font-size: 18px;
+	margin-bottom: 16px;
+	text-align: justify;}
+
+div {width: 50%;
+    height: 100px;
+    margin:0px 350px;
+    padding:30px;
+    border: :10px solid 0
+    }
+
+.form{
+    margin: 2em;
+    width: 80%;
+    border: 1px solid #ccc;
+    margin: 18px;
+    padding: 15px;
+}
+input, textarea {
+    margin-bottom:12px;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+
+}
+footer {
+	background: #eaded9;
+	padding: 16px 16px;
+	margin-top: 400px;
+}
+.main-nav {
+    float: right;
+}
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
