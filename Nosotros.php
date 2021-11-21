@@ -12,17 +12,30 @@
   <script src="" async defer></script>    
 </head>
 <body>
+<?php $Titulo = "Upthink Soluciones";
+  $Secundario="Desarrollando ideas";
+  $Propiedad="Yessenia Romero";
+  $Mensaje_largo="Hola ";
+  $Fecha1=date("Y");
+  $Fecha2=date("Y/m/d");
+  $Servicio1="Construcción Sostenible";
+  $Servicio2="Seguridad y Salud Ocupacional";
+  $Servicio3="Calidad";
+  $Servicio4="Tutoriales";
+  $Servicio5="Asesoramiento Empresarial"
+  ?>
   <header class="main-header">
 		<img class="logo" src="Imagen/LOGO 2.1 recortado.png">
-		<h1 class="name">Upthink Soluciones  <span>Desarrollando ideas</span></h1>
+		<h1 class="name"><?php echo $Titulo?>  <span><?php echo $Secundario?></span></h1>
     <nav class="nav"></nav>
       <ul>
         <a href="index.html">Inicio</a>
-        <a href="Nosotros.html">Nosotros</a>
+        <a href="Nosotros.php">Nosotros</a>
         <a href="pruebaclase.html">Contacto</a>
       </ul>
     </nav>     
   </header>
+ 
   <section>
     <h2>¿Quienes Somos?</h2>
     <p>Somos una organización de asistencia técnica conformado por un equipo de profesionales nacionales e internacionales trabajando en conjunto cuyo objetivo es satisfacer las necesidades de las empresas y trabajadores en cuestiones relativas a calidad, medio ambiente, inocuidad, energía, ISO/IEC 17025 seguridad y salud en el trabajo.
@@ -37,19 +50,19 @@
   <div class="container clearfix">
     <div class="photo-container">
       <img src="Imagen/Foto1.png">
-      <h3>Construcción Sostenible</h3>
+      <h3><?php echo $Servicio1?></h3>
       <p>Consultorias de Medio Ambiente</p>
       <a href="#" class="photo-container-button">descargar imagen</a>
     </div>
     <div class="photo-container">
       <img src="Imagen/Seguridad.jpg">
-      <h3>Seguridad y Salud Ocupacional</h3>
+      <h3><?php echo $Servicio2?></h3>
       <p>Consultorias de Seguridad y Salud Ocupacional</p>
       <a href="#" class="photo-container-button">descargar imagen</a>
     </div>
     <div class="photo-container">
       <img src="Imagen/certif-final.png">
-      <h3>Calidad</h3>
+      <h3><?php echo $Servicio3?></h3>
       <p>Consultorias de Sistema de gestión de Calidad</p>
       <a href="#" class="photo-container-button">descargar imagen</a>
     </div>
@@ -59,8 +72,15 @@
       <p>Introducción a bootstrap</p>
       <a href="index1.html" class="photo-container-button">ir a</a>
     </div>
+    <div class="photo-container">
+      <img src="imagen/6-Post-RRSS-1024x1024.png">
+      <h3><?php echo $Servicio5?></h3>
+      <p>Asesoramiento empresarial, tutorías e información destinados a ayudar a los pequeños y microempresarios a mejorar el desempeño de sus empresas.</p>
+      <a href="#" class="photo-container-button">descargar imagen</a>
+    </div>
   </div>
-    <footer><p><i>© 2021 Upthink Soluciones, Yessenia Romero</i></p> 
+    <footer><p><i>© <?php echo $Fecha1 . "<b>" . $Titulo . ",". $Propiedad?></i></p> 
+    <?php echo $Fecha2?>
         </footer>
 </body>
 </html>
