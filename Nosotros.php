@@ -78,6 +78,22 @@
       <p>Asesoramiento empresarial, tutorías e información destinados a ayudar a los pequeños y microempresarios a mejorar el desempeño de sus empresas.</p>
       <a href="#" class="photo-container-button">descargar imagen</a>
     </div>
+    <div class="photo-container">
+      <h3>Cotiza tu servicio de capacitación</h3>
+      <?php  
+      for ($x=350, $y=1; $y<=10; $x+=300, $y+=1) {
+        echo "Precios por $y horas de capacitación: $x <br>";
+      }
+      ?>  
+      <?php
+      function mul(int $x, int $y){
+      $z = $x*$y;
+      return $z;}
+      ?>
+
+      <p>Los grupos de capacitación es para un máximo de 15 personas.</p>
+      <a href="#" class="photo-container-button">descargar cotización</a>
+    </div>
   </div>
     <footer><p><i>© <?php echo $Fecha1 . "<b>" . $Titulo . ",". $Propiedad?></i></p> 
     <?php echo $Fecha2?>
