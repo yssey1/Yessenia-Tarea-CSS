@@ -84,6 +84,7 @@
       for ($x=350, $y=1; $y<=10; $x+=300, $y+=1) {
         echo "Precios por $y horas de capacitación: $x <br>";
       }
+      
       ?>  
       <?php
       function mul(int $x, int $y){
@@ -92,7 +93,7 @@
       ?>
 
       <p>Los grupos de capacitación es para un máximo de 15 personas.</p>
-      <a href="#" class="photo-container-button">descargar cotización</a>
+      <a href="cotizacion.php" class="photo-container-button">solicitud de cotización</a>
     </div>
   </div>
     <footer><p><i>© <?php echo $Fecha1 . "<b>" . $Titulo . ",". $Propiedad?></i></p> 

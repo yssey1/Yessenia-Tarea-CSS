@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Cotización</title>
     <link rel="shortcut icon" type="image/x-icon" href="imagen/favicon.ico">
     <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
      <!--Bootstrap-->
@@ -15,9 +15,16 @@
     <link rel="stylesheet" href="CSS/normalize.css">
 </head>
 <body>
+<?php
+ $Servicio1="Construcción Sostenible";
+ $Servicio2="Seguridad y Salud Ocupacional";
+ $Servicio3="Calidad";
+ $Servicio4="Tutoriales";
+ $Servicio5="Asesoramiento Empresarial"
+?>
     <header class="mt-0">
         <img src="Imagen/LOGO 2.1 recortado.png" class="round" alt="logo empresa" height="100px">
-        <h1>Contacto Upthink Soluciones</h1>
+        <h1>Cotización Upthink Soluciones</h1>
         <nav class="navbar navbar-expand-sm bg-info navbar-dark">
             <div class="container-fluid">
               <ul class="navbar-nav">
@@ -38,38 +45,32 @@
         </nav>
     </header>
     <section class="mt-0">
-     <p class="ml-2">Completa el formulario de contacto y una persona se comunicara contigo</p>
+     <p class="ml-2">Completa la solicitud de cotización</p>
       <div class="row">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.297372178056!2d-63.21030904946622!3d-17.777715987786074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDQ2JzM5LjgiUyA2M8KwMTInMjkuMiJX!5e0!3m2!1ses!2sbo!4v1636388395412!5m2!1ses!2sbo" width="250" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
         <div class="formulario">
-         <form action="contacto.php" method="post">
+         <form action="contacto.php" method="post"> 
           <label for="fname">Datos:</label><br>    
             <input class="form-control" id="Nombre" name="Nombre" placeholder="Nombre*" type="text" required/>
             <input class="form-control" id="Apellido" name="Apellido" placeholder="Apellido*" type="text" required/>
             <input class="form-control" id="Correo" name="Correo" placeholder="Correo Electrónico*" type="email" required/>
             <input class="form-control" id="Telefono" name="Telefono" placeholder="Teléfono*" type="number" required/>
-            <input class="form-control" id="Ocupacion" name="Ocupacion" placeholder="Ocupación*" type="text" required/>
+            <input class="form-control" id="Cargo" name="Cargo" placeholder="Cargo*" type="text" required/>
+            <select class="form-control" name="Ciudad" required>
+                <option value="" disabled selected>Servicio</option>
+                <option value="Santa Cruz">Construcción sostenible</option>
+                <option value="La Paz">Seguridad y salud ocupacional</option>
+                <option value="Cochabamba">Calidad</option>
+                <option value="Tarija">Capacitaciones técnicas</option>
+                <option value="Oruro">Asesoria empresarial</option>
+            </select>
             <label>Mensaje</label>
             <textarea></textarea>
-            <select class="form-control" name="Ciudad" required>
-                <option value="" disabled selected>Ciudad Origen</option>
-                <option value="Santa Cruz">Santa Cruz</option>
-                <option value="La Paz">La Paz</option>
-                <option value="Cochabamba">Cochabamba</option>
-                <option value="Tarija">Tarija</option>
-                <option value="Oruro">Oruro</option>
-                <option value="Potosi">Potosi</option>
-                <option value="Sucre">Sucre</option>
-                <option value="Beni">Beni</option>
-                <option value="Pando">Pando</option>
-                <option value="Pando">Otro</option>
-            </select>
             <input type="submit" value="Enviar este formulario" />
          </form>
         </div>    
     </section>
-    
+   
   <footer class="mt-1 p-1 bg-dark text-white text-center">
       <div class="mt-5 p-4 bg-dark text-white text-center">
         <p>© 2021 Upthink Soluciones, Yessenia Romero</p>    
