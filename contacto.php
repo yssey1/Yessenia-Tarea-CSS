@@ -1,15 +1,21 @@
 <?php
  
 if($_POST) {
-    $visitor_name = "";
+    $visitor_nombre = "";
+    $visitor_apellido = "";
     $visitor_email = "";
     $email_title = "";
     $concerned_department = "";
-    $visitor_message = "";
+    $visitor_mensaje = "";
      
-    if(isset($_POST['visitor_name'])) {
-      $visitor_name = filter_var($_POST['visitor_name'], FILTER_SANITIZE_STRING);
+    if(isset($_POST['visitor_nombre'])) {
+      $visitor_name = filter_var($_POST['visitor_nombre'], FILTER_SANITIZE_STRING);
     }
+    
+    if(isset($_POST['visitor_apellido'])) {
+        $visitor_name = filter_var($_POST['visitor_apellido'], FILTER_SANITIZE_STRING);
+      }
+       
      
     if(isset($_POST['visitor_email'])) {
         $visitor_email = str_replace(array("\r", "\n", "%0a", "%0d"), '', $_POST['visitor_email']);
@@ -24,18 +30,18 @@ if($_POST) {
         $concerned_department = filter_var($_POST['concerned_department'], FILTER_SANITIZE_STRING);
     }
      
-    if(isset($_POST['visitor_message'])) {
+    if(isset($_POST['visitor_mensaje'])) {
         $visitor_message = htmlspecialchars($_POST['visitor_message']);
     }
      
-    if($concerned_department == "billing") {
-        $recipient = "billing@domain.com";
+    if($concerned_department == "sostenibilidad") {
+        $recipient = "servicios@domain.com";
     }
-    else if($concerned_department == "marketing") {
-        $recipient = "marketing@domain.com";
+    else if($concerned_department == "calidad") {
+        $recipient = "servicios@domain.com";
     }
-    else if($concerned_department == "technical support") {
-        $recipient = "tech.support@domain.com";
+    else if($concerned_department == "asesorias") {
+        $recipient = "asesorias@domain.com";
     }
     else {
         $recipient = "contact@domain.com";
@@ -46,13 +52,13 @@ if($_POST) {
     .'From: ' . $visitor_email . "\r\n";
      
     if(mail($recipient, $email_title, $visitor_message, $headers)) {
-        echo "<p>Thank you for contacting us, $visitor_name. You will get a reply within 24 hours.</p>";
+        echo "<p>Gracias por ponerte en contacto con nosotros, $visitor_name . Nosotros nos contactaremos contigo en las siguientes 24 horas.</p>";
     } else {
-        echo '<p>We are sorry but the email did not go through.</p>';
+        echo '<p>Lo sentimos pero el correo electrónico no fue recibido.</p>';
     }
      
 } else {
-    echo '<p>Something went wrong</p>';
+    echo '<p>Ups! Algo salió mal</p>';
 }
  
 ?>
