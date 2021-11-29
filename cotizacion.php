@@ -57,6 +57,19 @@
             <input class="form-control" id="Telefono" name="Telefono" placeholder="Teléfono*" type="number" required/>
             <input class="form-control" id="Cargo" name="Cargo" placeholder="Cargo*" type="text" required/>
             <select class="form-control" name="Ciudad" required>
+                <option value="" disabled selected>Ciudad Origen</option>
+                <option value="Santa Cruz">Santa Cruz</option>
+                <option value="La Paz">La Paz</option>
+                <option value="Cochabamba">Cochabamba</option>
+                <option value="Tarija">Tarija</option>
+                <option value="Oruro">Oruro</option>
+                <option value="Potosi">Potosi</option>
+                <option value="Sucre">Sucre</option>
+                <option value="Beni">Beni</option>
+                <option value="Pando">Pando</option>
+                <option value="Pando">Otro</option>
+            </select>
+            <select class="form-control" name="Ciudad" required>
                 <option value="" disabled selected>Servicio</option>
                 <option value="Santa Cruz">Construcción sostenible</option>
                 <option value="La Paz">Seguridad y salud ocupacional</option>
