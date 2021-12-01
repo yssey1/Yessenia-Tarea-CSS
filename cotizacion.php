@@ -67,9 +67,9 @@
                 <option value="Sucre">Sucre</option>
                 <option value="Beni">Beni</option>
                 <option value="Pando">Pando</option>
-                <option value="Pando">Otro</option>
+                <option value="Otro">Otro</option>
             </select>
-            <select multiple class="form-control" name="Servicios" required>
+            <select multiple class="form-control" name="visitor_servicios" required>
                 <option value="" disabled selected>Servicio</option>
                 <option value="Sostenible">Construcción sostenible</option>
                 <option value="Seguridad">Seguridad y salud ocupacional</option>
