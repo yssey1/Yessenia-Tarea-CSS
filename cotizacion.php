@@ -51,12 +51,12 @@
         <div class="formulario">
          <form action="contacto.php" method="post"> 
           <label for="fname">Datos:</label><br>    
-            <input class="form-control" id="Nombre" name="visitor_nombre" placeholder="Nombre*" type="text" required/>
-            <input class="form-control" id="Apellido" name="visitor_apellido" placeholder="Apellido*" type="text" required/>
-            <input class="form-control" id="Correo" name="visitor_email" placeholder="Correo Electrónico*" type="email" required/>
-            <input class="form-control" id="Telefono" name="visitor_Telefono" placeholder="Teléfono*" type="number" required/>
-            <input class="form-control" id="Cargo" name="visitor_Cargo" placeholder="Cargo*" type="text" required/>
-            <select class="form-control" name="visitor_Ciudad" required>
+            <input class="form-control" id="Nombre" name="Nombre" placeholder="Nombre*" type="text" required/>
+            <input class="form-control" id="Apellido" name="Apellido" placeholder="Apellido*" type="text" required/>
+            <input class="form-control" id="Correo" name="Correo" placeholder="Correo Electrónico*" type="email" required/>
+            <input class="form-control" id="Telefono" name="Telefono" placeholder="Teléfono*" type="number" required/>
+            <input class="form-control" id="Cargo" name="Cargo" placeholder="Cargo*" type="text" required/>
+            <select class="form-control" name="Ciudad" required>
                 <option value="" disabled selected>Ciudad Origen</option>
                 <option value="Santa Cruz">Santa Cruz</option>
                 <option value="La Paz">La Paz</option>
@@ -69,7 +69,7 @@
                 <option value="Pando">Pando</option>
                 <option value="Otro">Otro</option>
             </select>
-            <select multiple class="form-control" name="visitor_servicios" required>
+            <select multiple class="form-control" name="Servicios" required>
                 <option value="" disabled selected>Servicio</option>
                 <option value="Sostenible">Construcción sostenible</option>
                 <option value="Seguridad">Seguridad y salud ocupacional</option>
