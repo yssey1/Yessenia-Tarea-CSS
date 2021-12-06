@@ -32,6 +32,7 @@
         <a href="index.html">Inicio</a>
         <a href="Nosotros.php">Nosotros</a>
         <a href="pruebaclase.html">Contacto</a>
+        <a href="login.html">Login</a>
       </ul>
     </nav>     
   </header>

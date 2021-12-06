@@ -55,7 +55,7 @@
             <input class="form-control" id="Apellido" name="Apellido" placeholder="Apellido*" type="text" required/>
             <input class="form-control" id="Correo" name="Correo" placeholder="Correo Electrónico*" type="email" required/>
             <input class="form-control" id="Telefono" name="Telefono" placeholder="Teléfono*" type="number" required/>
-            <input class="form-control" id="Cargo" name="Cargo" placeholder="Cargo*" type="text" required/>
+            <input class="form-control" id="Ocupacion" name="Ocupacion" placeholder="Ocupacion*" type="text" required/>
             <select class="form-control" name="Ciudad" required>
                 <option value="" disabled selected>Ciudad Origen</option>
                 <option value="Santa Cruz">Santa Cruz</option>

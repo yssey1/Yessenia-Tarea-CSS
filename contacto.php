@@ -1,5 +1,4 @@
 <?php
-
     if(isset($_POST['Nombre'])) {
       $Nombre = filter_var($_POST['Nombre'], FILTER_SANITIZE_STRING);
     }
@@ -8,8 +7,8 @@
         $vNombre = filter_var($_POST['Apellido'], FILTER_SANITIZE_STRING);
     }
       
-    if(isset($_POST['Cargo'])) {
-        $Nombre = filter_var($_POST['Cargo'], FILTER_SANITIZE_STRING);
+    if(isset($_POST['Ocupacion'])) {
+        $Nombre = filter_var($_POST['Ocupacion'], FILTER_SANITIZE_STRING);
     }
 
     if(isset($_POST['Correo'])) {
@@ -25,22 +24,21 @@
         //$Servicios = filter_var($_POST['Servicios'], FILTER_SANITIZE_STRING);}
     
     if(isset($_POST['Ciudad'])) {
-        $Ciudad = filter_var($_POST['Ciudad'], FILTER_SANITIZE_STRING);
+            $Ciudad = filter_var($_POST['Ciudad'], FILTER_SANITIZE_STRING);
     }
      
-    //if(isset($_POST['Mensaje'])) {
-        //$Mensaje = htmlspecialchars($_POST['Mensaje']);}
+    if(isset($_POST['Mensaje'])) {
+        $Mensaje = htmlspecialchars($_POST['Mensaje']);}
     {
     $Nombre = $_POST['Nombre'];
-	$Apellido = $_POST['Apellido'];
-	$Correo = $_POST['Correo'];
-	$Telefono = $_POST['Telefono'];
-    $Cargo = $_POST["Cargo"];
-	$Ciudad = $_POST['Ciudad'];
+    $Apellido = $_POST['Apellido'];
+    $Correo = $_POST['Correo'];
+    $Telefono = $_POST['Telefono'];
+    $Cargo = $_POST["Ocupacion"];
+    $Ciudad = $_POST['Ciudad'];
 	 //$Servicios = "Servicios";
-    //$Mensaje = "Mensaje";
+    $Mensaje = "Mensaje";
     }
-
     $conn = new mysqli('localhost','root','','formulariodb');
     mysqli_query($conn,"SET CHARACTER SET 'utf8'");
     mysqli_query($conn,"SET SESSION collation_connection ='utf8_unicode_ci'");
@@ -48,16 +46,30 @@
             echo "$conn->connect_error";
             die("Connection Failed : ". $conn->connect_error);
         } else {
-            $stmt = $conn->prepare("INSERT INTO registro_datos (Nombre, Apellido, Correo, Telefono, Cargo, Ciudad) values(?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("sssiss", $Nombre, $Apellido, $Correo, $Telefono, $Cargo, $Ciudad);
+            $stmt = $conn->prepare("INSERT INTO registro_datos (Nombre, Apellido, Correo, Telefono, Ocupacion, Ciudad) values(?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("sssiss", $Nombre, $Apellido, $Correo, $Telefono, $Ocupacion, $Ciudad);
             $execval = $stmt->execute();
             echo $execval;    
     		
             $stmt->close();
             $conn->close();
-        }
-    if($Servicios = "Servicios") {
-        $recipient = "upthinkconsultora@gmail.com";}
+            echo "<p> Gracias por ponerte en contacto con nosotros, $Nombre . nos contactaremos contigo en las siguientes 24 horas.</p>";}
+
+        //$subject = "Mensaje Web";    
+        if($Servicios = "Servicios") {
+            $Recipient = "upthinkconsultora@gmail.com";}
+        $headers  = 'MIME-Version: 1.0' . "\r\n"
+        .'Content-type: text/html; charset=utf-8' . "\r\n"
+        .'From: ' . $Correo . "\r\n"; 
+    
+            $Mensaje = "Mensaje";
+    
+        if(mail($Recipient, $Mensaje, $headers))
+        {
+            echo "<p> Gracias por ponerte en contacto con nosotros, $Nombre . nos contactaremos contigo en las siguientes 24 horas.</p>";
+        } else {
+            echo '<p>Lo sentimos pero el correo electrónico no fue recibido.</p>'; '<p>Ups! Algo salió mal</p>';}
+
     /*else if($Servicios = "calidad") {
         $recipient = "upthinkconsultora@gmail.com"; }
     else if($Servicios = "asesorias") {
@@ -65,16 +77,5 @@
     else {
         $recipient = "upthinkconsultora@gmail.com";  }*/
     
-    //$sendTo = "upthinkconsultora@gmail.com";
-    $subject = "Mensaje Web";    
-    
-    $headers  = 'MIME-Version: 1.0' . "\r\n"
-    .'Content-type: text/html; charset=utf-8' . "\r\n"
-    .'From: ' . $Correo . "\r\n";
-     
-    if(mail($recipient, $Mensaje, $headers)) {
-        echo "<p> Gracias por ponerte en contacto con nosotros, $Nombre . nos contactaremos contigo en las siguientes 24 horas.</p>";
-    } else {
-        echo '<p>Lo sentimos pero el correo electrónico no fue recibido.</p>'; '<p>Ups! Algo salió mal</p>';
-}
+    $sendTo = "upthinkconsultora@gmail.com";}
 ?>
